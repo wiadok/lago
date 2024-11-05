@@ -11,13 +11,13 @@ jobs:
         uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{ secrets.GH_TOKEN}}
-          repository: getlago/lago-api
+          repository: wiadok/lago-api
           event-type: release
           client-payload: '{"version": "${{ github.event.release.tag_name }}"}'
       - name: Front Dispatch
         uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{ secrets.GH_TOKEN }}
-          repository: getlago/lago-front
+          repository: wiadok/lago-front
           event-type: release
           client-payload: '{"version": "${{ github.event.release.tag_name }}"}'
